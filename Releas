@@ -1,0 +1,9 @@
+Origin: 星星璀璨✨-Repo
+Label: 星星璀璨✨-Repo
+Suite: stable
+Version: 1.0
+Codename: termux
+Architectures: iphoneos-arm iphoneos-arm64
+Components: iOS
+Description: 欢迎来到星星璀璨源！✨
+
