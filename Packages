@@ -1,0 +1,37 @@
+Package: com.xingxingcc.sourceinfo
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: 星星闪耀者
+Filename: debs/sourceinfo.deb
+Size: 1712
+MD5sum: 24a666922a53c1e27de363e8bb4cf5ae
+SHA1: 26ca91e4b39f588f501070501d09d3b9441ae02f
+SHA256: 20f68b05c52c79d40560c3a8d161a125aebc11e3887430c45cb8a68bce5c6c50
+Section: Utilities
+Description: 欢迎来到星星璀璨✨-Repo！这里是我自己的源仓库，耗时1天时间制作此源,此源插件全搬运，用来分享本人喜欢的插件。（本人测试了Sileo，暂无测试Cydia,Zebra及其他越狱管理器是否可运行此源，请自行测试。QQ:3783348120,欢迎指出问题，我持续更新软件源。
+Name: 星星璀璨✨-Repo 介绍
+
+Package: cydia
+Version: 1.1.30
+Architecture: iphoneos-arm
+Maintainer: Jay Freeman (saurik) <saurik@saurik.com>
+Installed-Size: 7160
+Pre-Depends: debianutils, dpkg (>= 1.14.25-8)
+Depends: apt7-lib, apt7-key, cydia-lproj (>= 1.1.10), darwintools, debianutils, dpkg (>= 1.18), org.thebigboss.repo.icons, sed, shell-cmds, system-cmds, uikittools (>= 1.1.4)
+Conflicts: bigboss, bigbossbetarepo, com.sosiphone.addcydia, cydia-sources, ispazio.net, modmyifone, ste, yellowsn0w.com, zodttd
+Replaces: bigboss, bigbossbetarepo, com.sosiphone.addcydia, cydia-sources, ispazio.net, modmyifone, saurik, ste, yellowsn0w.com, zodttd
+Provides: bigbossbetarepo, cydia-sources
+Filename: debs/cydia_1.1.30_iphoneos-arm.deb
+Size: 1292624
+MD5sum: bb0cdc40d3abac5b874972ad8a8b70a1
+SHA1: a237e6a09c77e91e1c89d212e53a85e691b0b47a
+SHA256: f80a5228b2bacbd8e2640d96dc1b15a5cf0db681d2ed976cf53f1f5c64a9b184
+Section: Packaging
+Priority: required
+Description: graphical iPhone front-end for APT
+Tag: purpose::uikit, cydia::essential, role::enduser
+Author: Jay Freeman (saurik) <saurik@saurik.com>
+Depiction: http://cydia.saurik.com/info/cydia/
+Icon: file:///Applications/Cydia.app/Icon-60.png
+Name: Cydia Installer
+
