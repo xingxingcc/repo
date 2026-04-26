@@ -6,7 +6,8 @@ Filename: debs/sourceinfo.deb
 Size: 1712
 MD5sum: 24a666922a53c1e27de363e8bb4cf5ae
 SHA1: 26ca91e4b39f588f501070501d09d3b9441ae02f
-SHA256: 20f68b05c52c79d40560c3a8d161a125aebc11e3887430c45cb8a68bce5c6c50
+SHA
+a256: 20f68b05c52c79d40560c3a8d161a125aebc11e3887430c45cb8a68bce5c6c50
 Section: Utilities
 Description: 欢迎来到星星璀璨✨-Repo！这里是我自己的源仓库，耗时1天时间制作此源,此源插件全搬运，用来分享本人喜欢的插件。（本人测试了Sileo，暂无测试Cydia,Zebra及其他越狱管理器是否可运行此源，请自行测试。QQ:3783348120,欢迎指出问题，我持续更新软件源。
 Name: 星星璀璨✨-Repo 介绍
