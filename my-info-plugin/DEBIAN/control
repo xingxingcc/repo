@@ -1,0 +1,9 @@
+Package: com.xingxingcc.sourceinfo
+Name: 星星璀璨✨-Repo 介绍
+Version: 1.0
+Architecture: iphoneos-arm
+Section: Utilities
+Maintainer: 星星闪耀者
+Depends:
+Description: 欢迎来到星星璀璨✨-Repo！这里是我自己的源仓库，耗时1天时间制作此源,此源插件全搬运，用来分享本人喜欢的插件。（本人测试了Sileo，暂无测试Cydia,Zebra及其他越狱管理器是否可运行此源，请自行测试。QQ:3783348120,欢迎指出问题，我持续更新软件源。
+

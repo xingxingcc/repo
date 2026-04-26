@@ -35,3 +35,37 @@ Depiction: http://cydia.saurik.com/info/cydia/
 Icon: file:///Applications/Cydia.app/Icon-60.png
 Name: Cydia Installer
 
+Package: dpkg
+Version: 1.18.10-12
+Architecture: iphoneos-arm
+Maintainer: Jay Freeman (saurik) <saurik@saurik.com>
+Installed-Size: 1816
+Pre-Depends: tar (>= 1.23)
+Depends: bash, bzip2, coreutils-bin, diffutils, findutils, gzip, lzma, ncurses, tar
+Filename: debs/1430dpkg_1.18.10-12_iphoneos-arm.deb
+Size: 422468
+MD5sum: 0f28fd6e79ae7e12636589f9163c71ea
+SHA1: c788d9f2c3126c146bd66c4659560de78d1afbef
+SHA256: 87482e0c005a152f269f5c78a753ff514db5736b579cf870bd7dcba96f1463c2
+Section: Packaging
+Priority: required
+Homepage: http://wiki.debian.org/Teams/Dpkg
+Description: package maintainance tools from Debian
+Name: Debian Packager
+
+Package: wget
+Version: 1.16-4
+Architecture: iphoneos-arm
+Maintainer: Jay Freeman (saurik) <saurik@saurik.com>
+Installed-Size: 480
+Pre-Depends: dpkg (>= 1.14.25-8)
+Depends: gettext, openssl
+Filename: debs/1795wget_1.16-4_iphoneos-arm.deb
+Size: 210290
+MD5sum: 9221072b359a2c526e0f07467d30cc10
+SHA1: 784a5c74d502f51c2bd0f8278315e99aa196b49d
+SHA256: e35a50a6e4d9be59c46b822062c2aead1fe48512bb2fd4b6c8e646b8de08bd64
+Section: Networking
+Priority: important
+Description: simple HTTP file transfer client
+
