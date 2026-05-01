@@ -105,13 +105,19 @@ const allAllow = [...allowA7,...allowA8,...allowA9,...allowA10];
 
 function getIOSVersion(){
 let ua = navigator.userAgent;
-let m = ua.match(/iPhone OS (\d+\.\d+)/);
-return m ? m[1] : "未知系统";
+let match = ua.match(/iPhone OS (\d+_\d+)/);
+if (match) {
+return match[1].replace("_", ".");
+}
+return "未知系统";
 }
 function getDeviceModel(){
 let ua = navigator.userAgent;
-let d = ua.match(/(iPhone|iPad)\d+,\d+/);
-return d ? d[0] : "未知设备";
+let match = ua.match(/iPhone(\d+),(\d+)/);
+if (match) {
+return "iPhone" + match[1] + "," + match[2];
+}
+return "未知设备";
 }
 function getChip(model){
 if(allowA7.includes(model)) return "A7";
