@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>maximum jailbreak</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+width:100vw;
+height:100vh;
+background: linear-gradient(-45deg,#050812,#0b1529,#101c38,#061020,#091426);
+background-size:400% 400%;
+animation: gradientFlow 10s ease infinite;
+color:#fff;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Segoe UI,Roboto,Light,sans-serif;
+text-align:center;
+padding-top:90px;
+overflow:hidden;
+font-weight:300;
+letter-spacing:1px;
+}
+@keyframes gradientFlow{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+h1{
+font-size:38px;
+color:#ffffff;
+letter-spacing:6px;
+font-weight:200;
+}
+.subtitle{
+font-size:15px;
+color:rgba(255,255,255,0.6);
+margin-top:8px;
+letter-spacing:1px;
+}
+.info-box{
+font-size:14px;
+color:rgba(255,255,255,0.75);
+margin:22px 0;
+line-height:1.6;
+}
+.tip-text{
+font-size:16px;
+margin-bottom:20px;
+height:22px;
+transition:all 0.6s ease;
+}
+.btn{
+padding:20px 50px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.2);
+border-radius:999px;
+color:#fff;
+font-size:17px;
+backdrop-filter:blur(8px);
+font-weight:300;
+letter-spacing:2px;
+transition:all 1.2s ease;
+outline:none;
+border:none;
+}
+.btn.no{
+background:rgba(180,20,20,0.45);
+cursor:not-allowed;
+}
+.author{
+position:fixed;
+bottom:35px;
+left:0;
+width:100%;
+font-size:13px;
+color:rgba(255,255,255,0.5);
+letter-spacing:1px;
+font-weight:200;
+line-height:1.8;
+}
+</style>
+</head>
+<body>
+
+<h1>maximum jailbreak</h1>
+<div class="subtitle">（支持iOS12.0～iOS12.5.7在线越狱）</div>
+
+<div class="info-box" id="deviceInfo"></div>
+<div class="tip-text" id="devTip"></div>
+<button class="btn" id="jbBtn" onclick="startJB()">一键越狱</button>
+
+<div class="author">
+由github 作者star shining制作<br>
+来自中国🇨🇳<br>
+制作者QQ：3783348120
+</div>
+
+<script>
+const allowSys = ["12.0","12.1","12.2","12.3","12.4","12.5","12.5.1","12.5.2","12.5.3","12.5.4","12.5.5","12.5.6","12.5.7"];
+const allowA7 = ["iPhone6,1","iPhone6,2","iPad4,1","iPad4,2","iPad4,3","iPad5,1","iPad5,2","iPad5,3","iPad5,4"];
+const allowA8 = ["iPhone7,1","iPhone7,2","iPad5,5","iPad5,6","iPad6,11","iPad6,12"];
+const allowA9 = ["iPhone8,1","iPhone8,2","iPhone8,4","iPad6,3","iPad6,4","iPad6,7","iPad6,8"];
+const allowA10 = ["iPhone9,1","iPhone9,2","iPhone9,3","iPhone9,4"];
+const allAllow = [...allowA7,...allowA8,...allowA9,...allowA10];
+
+function getIOSVersion(){
+let ua = navigator.userAgent;
+let m = ua.match(/iPhone OS (\d+\.\d+)/);
+return m ? m[1] : "未知系统";
+}
+function getDeviceModel(){
+let ua = navigator.userAgent;
+let d = ua.match(/(iPhone|iPad)\d+,\d+/);
+return d ? d[0] : "未知设备";
+}
+function getChip(model){
+if(allowA7.includes(model)) return "A7";
+if(allowA8.includes(model)) return "A8";
+if(allowA9.includes(model)) return "A9";
+if(allowA10.includes(model)) return "A10";
+return "未知芯片";
+}
+
+let sysVer = getIOSVersion();
+let devModel = getDeviceModel();
+let chip = getChip(devModel);
+let ok = allowSys.includes(sysVer) && allAllow.includes(devModel);
+
+document.getElementById("deviceInfo").innerHTML =
+`设备型号：${devModel}<br>芯片：${chip}<br>当前系统：iOS ${sysVer}`;
+
+let tip = document.getElementById("devTip");
+let btn = document.getElementById("jbBtn");
+
+if(ok){
+tip.innerText = "✅ 设备检测通过，可正常越狱";
+btn.disabled = false;
+}else{
+tip.innerText = "您的设备或系统不支持！";
+btn.classList.add("no");
+btn.disabled = true;
+}
+
+function startJB(){
+if(!btn.disabled){
+alert("设备验证通过，开始注入越狱漏洞");
+}
+}
+</script>
+</body>
+</html>
