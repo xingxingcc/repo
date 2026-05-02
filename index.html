@@ -11,11 +11,11 @@ width:100vw;
 height:100vh;
 background: linear-gradient(-45deg,#050812,#0b1529,#101c38,#061020,#091426);
 background-size:400% 400%;
-animation: gradientFlow 10s ease infinite;
+animation: gradientFlow 12s ease infinite;
 color:#fff;
 font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Segoe UI,Roboto,Light,sans-serif;
 text-align:center;
-padding-top:120px;
+padding-top:140px;
 overflow:hidden;
 font-weight:300;
 letter-spacing:1px;
@@ -26,7 +26,7 @@ letter-spacing:1px;
 100%{background-position:0% 50%}
 }
 .title-container{
-margin-bottom:30px;
+margin-bottom:40px;
 }
 h1{
 font-size:42px;
@@ -34,18 +34,13 @@ color:#ffffff;
 letter-spacing:8px;
 font-weight:200;
 line-height:1.2;
+text-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
 .subtitle{
 font-size:14px;
 color:rgba(255,255,255,0.55);
 margin-top:10px;
 letter-spacing:2px;
-}
-.tip-text{
-font-size:16px;
-margin:25px 0;
-color:#fff;
-opacity:0.85;
 }
 .btn{
 padding:20px 50px;
@@ -59,6 +54,13 @@ font-weight:300;
 letter-spacing:2px;
 outline:none;
 border:none;
+transition: all 0.2s ease;
+cursor: pointer;
+}
+.btn:active{
+transform: scale(0.96);
+background:rgba(255,255,255,0.15);
+box-shadow: 0 0 20px rgba(255,255,255,0.15);
 }
 .author{
 position:fixed;
@@ -70,6 +72,39 @@ color:rgba(255,255,255,0.5);
 letter-spacing:1px;
 font-weight:200;
 line-height:1.8;
+background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+padding:20px 0;
+}
+/* 加载动画层 */
+.loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.progress-text {
+  color:#fff;
+  font-size:16px;
+  margin-top:10px;
 }
 </style>
 </head>
@@ -80,7 +115,6 @@ line-height:1.8;
     <div class="subtitle">（支持iOS12.0～iOS12.5.7在线越狱）</div>
 </div>
 
-<div class="tip-text">点击下方按钮开始越狱</div>
 <button class="btn" id="jbBtn" onclick="startJB()">一键越狱</button>
 
 <div class="author">
@@ -89,9 +123,31 @@ line-height:1.8;
 制作者QQ：3783348120
 </div>
 
+<!-- 加载动画层 -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <p class="progress-text" id="progressText">正在准备越狱流程... 1/3</p>
+</div>
+
 <script>
 function startJB(){
-    alert("正在制作中，敬请期待！（我们会努力的🫡）");
+    const overlay = document.getElementById('loadingOverlay');
+    const progressText = document.getElementById('progressText');
+    overlay.style.display = 'flex';
+
+    // 分三步模拟进度
+    setTimeout(() => {
+        progressText.textContent = "正在注入漏洞... 2/3";
+    }, 1000);
+
+    setTimeout(() => {
+        progressText.textContent = "正在安装组件... 3/3";
+    }, 2000);
+
+    setTimeout(() => {
+        overlay.style.display = 'none';
+        alert("正在制作中，敬请期待！");
+    }, 3000);
 }
 </script>
 </body>
